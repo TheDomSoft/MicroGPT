@@ -105,8 +105,9 @@ ipython_config.py
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-#poetry.toml
+# Keep poetry.lock in version control for reproducible builds
+# poetry.lock (uncommented - we want this in version control)
+poetry.toml
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
@@ -186,7 +187,7 @@ cython_debug/
 #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 #  and can be added to the global gitignore or merged into this file. However, if you prefer, 
 #  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+.vscode/
 
 # Ruff stuff:
 .ruff_cache/
@@ -205,3 +206,22 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project-specific ignores
+# Cache files from text downloads
+*.cache
+# Model checkpoints and outputs
+*.pt
+*.pth
+model_*.bin
+checkpoint_*
+# Generated text samples
+generated_*.txt
+samples_*.txt
+# Training logs
+train_*.log
+*.wandb
+wandb/
+# Temporary data files
+tmp/
+temp/
